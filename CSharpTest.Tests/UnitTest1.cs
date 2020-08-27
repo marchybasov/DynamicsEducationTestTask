@@ -49,7 +49,31 @@ namespace CSharpTest.Tests
             Assert.IsTrue(result.Equals(new DateTime(2017, 4, 28)));
         }
 
-       
 
+        [TestMethod]
+        public void TestStartDateOrEndDateOnWeekend()
+        {
+            DateTime startDate = new DateTime(2017, 4, 23);
+            int count = 5;
+            WeekEnd[] weekends = new WeekEnd[2]
+           {
+                new WeekEnd(new DateTime(2017, 4, 21), new DateTime(2017, 4, 23)),
+                new WeekEnd(new DateTime(2017, 4, 28), new DateTime(2017, 4, 28))
+
+           };
+            DateTime result = new WorkDayCalculator().Calculate(startDate, count, weekends);
+
+            Assert.IsTrue(result.Equals(new DateTime(2017, 4, 29)));
+
+
+        }
+
+        //[TestMethod]
+        //public void TestSwappedWeekendInput()
+        //{
+        //    DateTime startDate = new DateTime(2020, 8, 20);
+
+        //    int count = 4
+        //}
     }
 }

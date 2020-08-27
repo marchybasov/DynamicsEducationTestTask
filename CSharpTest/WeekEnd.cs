@@ -13,10 +13,11 @@ namespace CSharpTest
 
         public WeekEnd(DateTime startDate, DateTime endDate)
         {
-            StartDate = startDate;
-            EndDate = endDate;
             
+                StartDate = startDate;
+                EndDate = endDate;           
+
         }
-        
+
     }
 }
